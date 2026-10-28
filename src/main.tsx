@@ -729,8 +729,8 @@ function FieldNotes({
       <div className="notes-controls">
         Drag the model to rotate at any time. Scroll or pinch over it to zoom.
         Click a model part or its 3D label to read its description. The zoom
-        buttons and camera reset are always available. Tap the membrane for a
-        ripple. Scroll over the lesson text, use the timeline or arrow keys to
+        buttons and camera reset are always available.
+        Scroll over the lesson text, use the timeline or arrow keys to
         change stage. Press Escape to close a part description.
         Space starts or pauses playback. Sound is optional and starts quietly.
       </div>

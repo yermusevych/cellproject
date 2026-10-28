@@ -1,9 +1,15 @@
 # Validation — classroom-aligned content and 3D inspection
 
+## Requested model and effect removal
+
+- Removed the original nucleolus mesh and the daughter-nucleolus component, including their animation code.
+- Removed touch ripple shader displacement, color pulses, uniforms, pointer handlers, interaction counters and help text.
+- All 21 existing tests and the TypeScript/Vite production build passed. Browser inspection confirmed the original and both daughter nuclei render without inner spheres; browser errors and warnings were empty. Source scans found no remaining nucleolus components or ripple code.
+
 ## Exact structure-label anchors
 
 - Cell labels resolve endpoints from tagged, currently transformed scene objects in `src/structureAnchors.ts`. Nucleus, New nucleus, Nuclear membrane, Cell membrane and Daughter cell leaders meet rendered silhouette vertices in the current camera view. This keeps their endpoints visibly on the translucent blue/green boundaries. DNA retains triangle intersections; spindle endpoints read the animated line buffer, and pole endpoints read membrane vertices. Missing or hidden targets hide the corresponding label. Cytoplasm retains a volume target outside the nucleus.
-- Nucleus labels and pointer selection identify the blue nuclear envelope, with matching envelope highlight and definition. The small pink decoration no longer acts as the Nucleus selection target. DNA copies and Opposite ends each have two leaders.
+- Nucleus labels and pointer selection identify the blue nuclear envelope, with matching envelope highlight and definition. The nucleolus models have been removed from the original and both daughter nuclei. DNA copies and Opposite ends each have two leaders.
 - All 21 tests and the TypeScript/Vite production build passed for the contour-pointer revision. Anchor regressions cover nucleus transforms and camera rotation, deformed membranes, completed-stage-six nucleus and daughter-cell outlines across orbit and separation, animated spindle buffers and the daughter-cell cytoplasm target. Numerical checks complement the visual review.
 - A fresh independent finish review returned `ship` with no material fixes after comparing both user screenshots with seven captures in `.impeccable/review-contour/`: intro, stage six, final separation, orbit, final orbit, mobile final and mobile intro. Endpoints were visibly attached to the blue/green boundaries. Earlier all-stage and nucleus-selection captures remain in `.impeccable/review-anchors/`. No physical-touch hardware or sustained FPS benchmark was used.
 - A browser interaction check selected the actual 3D Nucleus label at the intro: the blue nuclear shell highlighted, the description and close target appeared, and Escape dismissed the selection. Browser console errors and warnings were empty.
@@ -22,7 +28,7 @@ The entries below describe earlier completed revisions; the always-active behavi
 - All six explanations, label definitions, analogy captions and class notes are bounded to those sections. Advanced molecular explanations and outside biology reference links were removed.
 - The app distinguishes the two main stages from its six numbered steps. Page references are visible in class notes and mapped in CURRICULUM.md.
 - TypeScript and Vite production build passed. All 13 tests passed, including DNA containment, spindle geometry, membrane separation, four DNA sets per end, classroom label definitions and a vocabulary-scope guard.
-- Browser checks verified textbook-level metaphase/anaphase copy and labels, class notes, entering/exiting 3D mode, orbit beyond the previous limits, zoom buttons and wheel zoom. Wheel zoom left lesson progress unchanged. A membrane pointer interaction triggered the ripple uniforms and interaction counter. Camera reset restores the lesson view.
+- Browser checks verified textbook-level metaphase/anaphase copy and labels, class notes, entering/exiting 3D mode, orbit beyond the previous limits, zoom buttons and wheel zoom. Wheel zoom left lesson progress unchanged. Camera reset restores the lesson view.
 - Desktop 1440x900 and mobile 390x844 layouts were inspected. No physical touch hardware or sustained FPS benchmark was used.
 - The user selected six separate analogies, all implemented in procedural 3D: photocopier, rolled sleeping bags, gym class, socks/baskets, fenced gardens, and dividing soap-bubble shapes. The prior library model was removed.
 

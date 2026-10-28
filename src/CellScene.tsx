@@ -52,26 +52,19 @@ const TAU = Math.PI * 2;
 const COPPER = "#f6ad83",
   TEAL = "#8ee8d3";
 const membraneVertex = `
- uniform float time;uniform float rippleTime;uniform vec3 rippleOrigin;uniform float motion;
  varying vec3 vNormal;varying vec3 vPosition;varying vec3 vView;
  void main(){
-  float age=time-rippleTime;float d=length(position-rippleOrigin);float front=age*1.9*motion;
-  float envelope=exp(-pow((d-front)*6.,2.))*exp(-max(age,0.)*1.6)*step(0.,age)*(1.-step(2.8,age));
-  vec3 displaced=position+normal*cos((d-front)*22.)*envelope*.035*motion;
-  vNormal=normalize(normalMatrix*normal);vec4 mv=modelViewMatrix*vec4(displaced,1.);vView=normalize(-mv.xyz);vPosition=position;gl_Position=projectionMatrix*mv;
+  vNormal=normalize(normalMatrix*normal);vec4 mv=modelViewMatrix*vec4(position,1.);vView=normalize(-mv.xyz);vPosition=position;gl_Position=projectionMatrix*mv;
  }`;
 const membraneFragment = `
- uniform vec3 color;uniform float opacity;uniform float time;uniform float rippleTime;uniform vec3 rippleOrigin;uniform float motion;
+ uniform vec3 color;uniform float opacity;uniform float time;uniform float motion;
  varying vec3 vNormal;varying vec3 vPosition;varying vec3 vView;
  void main(){
   float rim=pow(1.-abs(dot(normalize(vNormal),vView)),2.4);
   float bands=sin(vPosition.y*38.+sin(vPosition.x*8.+time*.2*motion)*.4)*.5+.5;
   float grain=sin(vPosition.x*63.+vPosition.z*42.)*sin(vPosition.y*58.-vPosition.z*23.);
-  float age=time-rippleTime;float d=length(vPosition-rippleOrigin);float front=age*1.9*motion;
-  float envelope=exp(-pow((d-front)*6.,2.))*exp(-max(age,0.)*1.6)*step(0.,age)*(1.-step(2.8,age));
-  float pulse=max(0.,cos((d-front)*22.))*envelope;
-  float a=(.035+rim*.59+bands*.012+grain*.009+pulse*.45)*opacity;
-  gl_FragColor=vec4(color*(.50+rim*.75)+vec3(.43,.67,.57)*pulse,a);
+  float a=(.035+rim*.59+bands*.012+grain*.009)*opacity;
+  gl_FragColor=vec4(color*(.50+rim*.75),a);
  }`;
 function membraneMaterial(color: string, opacity = 1) {
   return new THREE.ShaderMaterial({
@@ -81,8 +74,6 @@ function membraneMaterial(color: string, opacity = 1) {
       color: { value: new THREE.Color(color) },
       opacity: { value: opacity },
       time: { value: 0 },
-      rippleTime: { value: -100 },
-      rippleOrigin: { value: new THREE.Vector3() },
       motion: { value: 1 },
     },
     side: THREE.DoubleSide,
@@ -134,7 +125,6 @@ function CellMembrane({
   selected: string | null;
   reduced: boolean;
 }) {
-  const { gl } = useThree();
   const geometry = useMemo(() => surfaceGeometry(), []),
     material = useMemo(() => membraneMaterial("#6fc8b4"), []);
   useFrame(({ clock }) => {
@@ -175,19 +165,6 @@ function CellMembrane({
       material={material}
       userData={{ anchorFor: ["Cell membrane", "Opposite ends", "Daughter cell", "Cytoplasm"], anchorSide: side, anchorPole: 48 * 65, envelope: true }}
       renderOrder={3}
-      onPointerDown={(e) => {
-        material.uniforms.rippleOrigin.value.copy(
-          e.object.worldToLocal(e.point.clone()),
-        );
-        material.uniforms.rippleTime.value = material.uniforms.time.value;
-        const stamp = String(e.nativeEvent.timeStamp);
-        if (gl.domElement.dataset.rippleInput !== stamp) {
-          gl.domElement.dataset.rippleInput = stamp;
-          gl.domElement.dataset.rippleCount = String(
-            Number(gl.domElement.dataset.rippleCount || 0) + 1,
-          );
-        }
-      }}
     />
   );
 }
@@ -203,7 +180,6 @@ function Nucleus({
   const original = useRef<THREE.Mesh>(null),
     left = useRef<THREE.Mesh>(null),
     right = useRef<THREE.Mesh>(null);
-  const nucleoli = useRef<THREE.Group>(null);
   const materials = useMemo(
     () => [
       membraneMaterial("#8cbdd0", 1),
@@ -239,24 +215,12 @@ function Nucleus({
           : "#9fbfc7",
       );
     });
-    if (nucleoli.current) nucleoli.current.visible = b.envelope > 0.15;
   });
   return (
     <>
       <mesh ref={original} material={materials[0]} {...interactive("Nucleus", onSelect)} userData={{ anchorFor: ["Nucleus", "Nuclear membrane"], anchorSide: 0, envelope: true }}>
         <sphereGeometry args={[1, 48, 32]} />
       </mesh>
-      <group ref={nucleoli}>
-        <mesh position={[0.32, 0.3, 0.1]}>
-          <sphereGeometry args={[0.22, 24, 16]} />
-          <meshStandardMaterial
-            color="#c9a6b8"
-            roughness={0.4}
-            emissive="#92707a"
-            emissiveIntensity={0.2}
-          />
-        </mesh>
-      </group>
       {[-1, 1].map((s, i) => (
         <group key={s}>
           <mesh
@@ -267,46 +231,11 @@ function Nucleus({
           >
             <sphereGeometry args={[1, 40, 28]} />
           </mesh>
-          <DaughterNucleolus side={s} timeline={timeline} selected={selected} />
         </group>
       ))}
     </>
   );
 }
-function DaughterNucleolus({
-  side,
-  timeline,
-  selected,
-}: {
-  side: number;
-  timeline: Timeline;
-  selected: string | null;
-}) {
-  const ref = useRef<THREE.Mesh>(null);
-  useFrame(() => {
-    if (ref.current) {
-      const b = biology(timeline.current);
-      ref.current.visible = b.daughterEnvelope > 0.3;
-      ref.current.position.set(
-        side * daughterCenter(b.division) + 0.22,
-        0.22,
-        0.12,
-      );
-      ref.current.scale.setScalar(b.daughterEnvelope);
-    }
-  });
-  return (
-    <mesh ref={ref}>
-      <sphereGeometry args={[0.16, 16, 12]} />
-      <meshStandardMaterial
-        color="#dcb6bd"
-        emissive="#ba8b80"
-        emissiveIntensity={0}
-      />
-    </mesh>
-  );
-}
-
 const COUNT = CHROMOSOME_COUNT,
   SEGMENTS = 80,
   SIDES = 9;
