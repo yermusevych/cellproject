@@ -1,6 +1,5 @@
 import * as THREE from "three";
 import { labelAnchor, type Point3 } from "./geometry.ts";
-import { biology } from "./timeline.ts";
 
 type Target = THREE.Object3D & { geometry?: THREE.BufferGeometry };
 
@@ -42,10 +41,15 @@ export class StructureAnchorResolver {
       });
     }
     const preferred = targets.find(t => t.userData.anchorSide === 0) ?? targets.find(t => t.userData.anchorSide === (name === "Daughter cell" ? -1 : 1)) ?? targets[0];
+    // A front-surface hit on a transparent shell looks like empty space.
+    // Attach shell leaders to their visible contour instead, in every view.
+    if (["Nucleus", "New nucleus"].includes(name)) return [this.contour([preferred], camera, -1, 0)];
+    if (name === "Nuclear membrane") return [this.contour([preferred], camera, 0.6, -0.8)];
+    if (name === "Cell membrane") return [this.contour(targets, camera, 1, -0.16)];
+    if (name === "Daughter cell") return [this.contour([preferred], camera, 0.55, -1)];
     preferred.geometry!.computeBoundingBox();
     this.box.copy(preferred.geometry!.boundingBox!).applyMatrix4(preferred.matrixWorld);
     this.box.getCenter(this.centre); this.box.getSize(this.size);
-    if (name === "Cell membrane" && biology(p).division < 0.3) this.centre.set(0, 0, 0);
     camera.updateWorldMatrix(true, false);
     this.right.set(1, 0, 0).applyQuaternion(camera.quaternion);
     this.up.set(0, 1, 0).applyQuaternion(camera.quaternion);
@@ -57,6 +61,22 @@ export class StructureAnchorResolver {
     // Generic membrane labels may hit either visible half; a nucleus label
     // stays attached to the one chosen nucleus rather than nearby DNA.
     return [this.surface(nuclear || name === "Centrosome" || name === "Daughter cell" ? [preferred] : targets, camera, hint)];
+  }
+
+  private contour(targets: Target[], camera: THREE.Camera, x: number, y: number): Point3 {
+    camera.updateWorldMatrix(true, false);
+    const vertex = new THREE.Vector3(), projected = new THREE.Vector3(), endpoint = new THREE.Vector3();
+    let furthest = -Infinity;
+    for (const target of targets) {
+      const positions = target.geometry!.getAttribute("position");
+      for (let i = 0; i < positions.count; i++) {
+        vertex.fromBufferAttribute(positions, i).applyMatrix4(target.matrixWorld);
+        projected.copy(vertex).project(camera);
+        const score = projected.x * x + projected.y * y;
+        if (score > furthest) { furthest = score; endpoint.copy(vertex); }
+      }
+    }
+    return endpoint.toArray() as Point3;
   }
 
   private vertex(target: Target, index: number): Point3 {
