@@ -1,0 +1,537 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-27T05:18:21.862953Z",
+  "title": "Design System: The Cell Cycle",
+  "extensions": {
+    "colorMeta": {
+      "abyss": {
+        "role": "neutral",
+        "displayName": "Abyss",
+        "tonalRamp": [
+          "oklch(15% 0.0176 195.66)",
+          "oklch(26% 0.0176 195.66)",
+          "oklch(38% 0.0176 195.66)",
+          "oklch(49% 0.0176 195.66)",
+          "oklch(61% 0.0176 195.66)",
+          "oklch(72% 0.0176 195.66)",
+          "oklch(84% 0.0176 195.66)",
+          "oklch(95% 0.0176 195.66)"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Ink",
+        "tonalRamp": [
+          "oklch(15% 0.0119 133.38)",
+          "oklch(26% 0.0119 133.38)",
+          "oklch(38% 0.0119 133.38)",
+          "oklch(49% 0.0119 133.38)",
+          "oklch(61% 0.0119 133.38)",
+          "oklch(72% 0.0119 133.38)",
+          "oklch(84% 0.0119 133.38)",
+          "oklch(95% 0.0119 133.38)"
+        ]
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Muted",
+        "tonalRamp": [
+          "oklch(15% 0.0262 164.21)",
+          "oklch(26% 0.0262 164.21)",
+          "oklch(38% 0.0262 164.21)",
+          "oklch(49% 0.0262 164.21)",
+          "oklch(61% 0.0262 164.21)",
+          "oklch(72% 0.0262 164.21)",
+          "oklch(84% 0.0262 164.21)",
+          "oklch(95% 0.0262 164.21)"
+        ]
+      },
+      "sea": {
+        "role": "secondary",
+        "displayName": "Sea",
+        "tonalRamp": [
+          "oklch(15% 0.0564 165.44)",
+          "oklch(26% 0.0564 165.44)",
+          "oklch(38% 0.0564 165.44)",
+          "oklch(49% 0.0564 165.44)",
+          "oklch(61% 0.0564 165.44)",
+          "oklch(72% 0.0564 165.44)",
+          "oklch(84% 0.0564 165.44)",
+          "oklch(95% 0.0564 165.44)"
+        ]
+      },
+      "line": {
+        "role": "neutral",
+        "displayName": "Line",
+        "tonalRamp": [
+          "oklch(15% 0.0341 172.14)",
+          "oklch(26% 0.0341 172.14)",
+          "oklch(38% 0.0341 172.14)",
+          "oklch(49% 0.0341 172.14)",
+          "oklch(61% 0.0341 172.14)",
+          "oklch(72% 0.0341 172.14)",
+          "oklch(84% 0.0341 172.14)",
+          "oklch(95% 0.0341 172.14)"
+        ]
+      },
+      "copper": {
+        "role": "primary",
+        "displayName": "Copper",
+        "tonalRamp": [
+          "oklch(15% 0.0841 45.75)",
+          "oklch(26% 0.0841 45.75)",
+          "oklch(38% 0.0841 45.75)",
+          "oklch(49% 0.0841 45.75)",
+          "oklch(61% 0.0841 45.75)",
+          "oklch(72% 0.0841 45.75)",
+          "oklch(84% 0.0841 45.75)",
+          "oklch(95% 0.0841 45.75)"
+        ]
+      },
+      "membrane": {
+        "role": "secondary",
+        "displayName": "Membrane",
+        "tonalRamp": [
+          "oklch(15% 0.0913 177.49)",
+          "oklch(26% 0.0913 177.49)",
+          "oklch(38% 0.0913 177.49)",
+          "oklch(49% 0.0913 177.49)",
+          "oklch(61% 0.0913 177.49)",
+          "oklch(72% 0.0913 177.49)",
+          "oklch(84% 0.0913 177.49)",
+          "oklch(95% 0.0913 177.49)"
+        ]
+      },
+      "chromosome": {
+        "role": "primary",
+        "displayName": "Chromosome",
+        "tonalRamp": [
+          "oklch(15% 0.1027 50.71)",
+          "oklch(26% 0.1027 50.71)",
+          "oklch(38% 0.1027 50.71)",
+          "oklch(49% 0.1027 50.71)",
+          "oklch(61% 0.1027 50.71)",
+          "oklch(72% 0.1027 50.71)",
+          "oklch(84% 0.1027 50.71)",
+          "oklch(95% 0.1027 50.71)"
+        ]
+      },
+      "teal": {
+        "role": "secondary",
+        "displayName": "Teal",
+        "tonalRamp": [
+          "oklch(15% 0.0920 177.44)",
+          "oklch(26% 0.0920 177.44)",
+          "oklch(38% 0.0920 177.44)",
+          "oklch(49% 0.0920 177.44)",
+          "oklch(61% 0.0920 177.44)",
+          "oklch(72% 0.0920 177.44)",
+          "oklch(84% 0.0920 177.44)",
+          "oklch(95% 0.0920 177.44)"
+        ]
+      },
+      "control-active": {
+        "role": "neutral",
+        "displayName": "Control Active",
+        "tonalRamp": [
+          "oklch(15% 0.0321 172.49)",
+          "oklch(26% 0.0321 172.49)",
+          "oklch(38% 0.0321 172.49)",
+          "oklch(49% 0.0321 172.49)",
+          "oklch(61% 0.0321 172.49)",
+          "oklch(72% 0.0321 172.49)",
+          "oklch(84% 0.0321 172.49)",
+          "oklch(95% 0.0321 172.49)"
+        ]
+      },
+      "switch-active": {
+        "role": "neutral",
+        "displayName": "Switch Active",
+        "tonalRamp": [
+          "oklch(15% 0.0381 161.21)",
+          "oklch(26% 0.0381 161.21)",
+          "oklch(38% 0.0381 161.21)",
+          "oklch(49% 0.0381 161.21)",
+          "oklch(61% 0.0381 161.21)",
+          "oklch(72% 0.0381 161.21)",
+          "oklch(84% 0.0381 161.21)",
+          "oklch(95% 0.0381 161.21)"
+        ]
+      },
+      "label-surface": {
+        "role": "neutral",
+        "displayName": "Label Surface",
+        "tonalRamp": [
+          "oklch(15% 0.0315 170.66)",
+          "oklch(26% 0.0315 170.66)",
+          "oklch(38% 0.0315 170.66)",
+          "oklch(49% 0.0315 170.66)",
+          "oklch(61% 0.0315 170.66)",
+          "oklch(72% 0.0315 170.66)",
+          "oklch(84% 0.0315 170.66)",
+          "oklch(95% 0.0315 170.66)"
+        ]
+      },
+      "detail-surface": {
+        "role": "neutral",
+        "displayName": "Detail Surface",
+        "tonalRamp": [
+          "oklch(15% 0.0297 173.22)",
+          "oklch(26% 0.0297 173.22)",
+          "oklch(38% 0.0297 173.22)",
+          "oklch(49% 0.0297 173.22)",
+          "oklch(61% 0.0297 173.22)",
+          "oklch(72% 0.0297 173.22)",
+          "oklch(84% 0.0297 173.22)",
+          "oklch(95% 0.0297 173.22)"
+        ]
+      },
+      "notes-surface": {
+        "role": "neutral",
+        "displayName": "Notes Surface",
+        "tonalRamp": [
+          "oklch(15% 0.0306 166.16)",
+          "oklch(26% 0.0306 166.16)",
+          "oklch(38% 0.0306 166.16)",
+          "oklch(49% 0.0306 166.16)",
+          "oklch(61% 0.0306 166.16)",
+          "oklch(72% 0.0306 166.16)",
+          "oklch(84% 0.0306 166.16)",
+          "oklch(95% 0.0306 166.16)"
+        ]
+      },
+      "parchment": {
+        "role": "neutral",
+        "displayName": "Parchment",
+        "tonalRamp": [
+          "oklch(15% 0.0457 79.24)",
+          "oklch(26% 0.0457 79.24)",
+          "oklch(38% 0.0457 79.24)",
+          "oklch(49% 0.0457 79.24)",
+          "oklch(61% 0.0457 79.24)",
+          "oklch(72% 0.0457 79.24)",
+          "oklch(84% 0.0457 79.24)",
+          "oklch(95% 0.0457 79.24)"
+        ]
+      },
+      "scene-annotation-surface": {
+        "role": "neutral",
+        "displayName": "Scene Annotation Surface",
+        "tonalRamp": [
+          "oklch(15% 0.0368 165.38)",
+          "oklch(26% 0.0368 165.38)",
+          "oklch(38% 0.0368 165.38)",
+          "oklch(49% 0.0368 165.38)",
+          "oklch(61% 0.0368 165.38)",
+          "oklch(72% 0.0368 165.38)",
+          "oklch(84% 0.0368 165.38)",
+          "oklch(95% 0.0368 165.38)"
+        ]
+      },
+      "scene-annotation-outline": {
+        "role": "neutral",
+        "displayName": "Scene Annotation Outline",
+        "tonalRamp": [
+          "oklch(15% 0.0455 161.16)",
+          "oklch(26% 0.0455 161.16)",
+          "oklch(38% 0.0455 161.16)",
+          "oklch(49% 0.0455 161.16)",
+          "oklch(61% 0.0455 161.16)",
+          "oklch(72% 0.0455 161.16)",
+          "oklch(84% 0.0455 161.16)",
+          "oklch(95% 0.0455 161.16)"
+        ]
+      },
+      "scene-annotation-text": {
+        "role": "neutral",
+        "displayName": "Scene Annotation Text",
+        "tonalRamp": [
+          "oklch(15% 0.0183 127.14)",
+          "oklch(26% 0.0183 127.14)",
+          "oklch(38% 0.0183 127.14)",
+          "oklch(49% 0.0183 127.14)",
+          "oklch(61% 0.0183 127.14)",
+          "oklch(72% 0.0183 127.14)",
+          "oklch(84% 0.0183 127.14)",
+          "oklch(95% 0.0183 127.14)"
+        ]
+      },
+      "scene-annotation-body": {
+        "role": "neutral",
+        "displayName": "Scene Annotation Body",
+        "tonalRamp": [
+          "oklch(15% 0.0285 133.74)",
+          "oklch(26% 0.0285 133.74)",
+          "oklch(38% 0.0285 133.74)",
+          "oklch(49% 0.0285 133.74)",
+          "oklch(61% 0.0285 133.74)",
+          "oklch(72% 0.0285 133.74)",
+          "oklch(84% 0.0285 133.74)",
+          "oklch(95% 0.0285 133.74)"
+        ]
+      },
+      "scene-label-edge": {
+        "role": "neutral",
+        "displayName": "Scene Label Edge",
+        "tonalRamp": [
+          "oklch(15% 0.0496 160.42)",
+          "oklch(26% 0.0496 160.42)",
+          "oklch(38% 0.0496 160.42)",
+          "oklch(49% 0.0496 160.42)",
+          "oklch(61% 0.0496 160.42)",
+          "oklch(72% 0.0496 160.42)",
+          "oklch(84% 0.0496 160.42)",
+          "oklch(95% 0.0496 160.42)"
+        ]
+      },
+      "scene-plaque-edge": {
+        "role": "neutral",
+        "displayName": "Scene Plaque Edge",
+        "tonalRamp": [
+          "oklch(15% 0.0454 147.09)",
+          "oklch(26% 0.0454 147.09)",
+          "oklch(38% 0.0454 147.09)",
+          "oklch(49% 0.0454 147.09)",
+          "oklch(61% 0.0454 147.09)",
+          "oklch(72% 0.0454 147.09)",
+          "oklch(84% 0.0454 147.09)",
+          "oklch(95% 0.0454 147.09)"
+        ]
+      },
+      "scene-close-surface": {
+        "role": "neutral",
+        "displayName": "Scene Close Surface",
+        "tonalRamp": [
+          "oklch(15% 0.0504 156.85)",
+          "oklch(26% 0.0504 156.85)",
+          "oklch(38% 0.0504 156.85)",
+          "oklch(49% 0.0504 156.85)",
+          "oklch(61% 0.0504 156.85)",
+          "oklch(72% 0.0504 156.85)",
+          "oklch(84% 0.0504 156.85)",
+          "oklch(95% 0.0504 156.85)"
+        ]
+      },
+      "scene-close-mark": {
+        "role": "neutral",
+        "displayName": "Scene Close Mark",
+        "tonalRamp": [
+          "oklch(15% 0.0235 122.74)",
+          "oklch(26% 0.0235 122.74)",
+          "oklch(38% 0.0235 122.74)",
+          "oklch(49% 0.0235 122.74)",
+          "oklch(61% 0.0235 122.74)",
+          "oklch(72% 0.0235 122.74)",
+          "oklch(84% 0.0235 122.74)",
+          "oklch(95% 0.0235 122.74)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Opening exhibit title; fluid Manrope with tight tracking."
+      },
+      "headline": {
+        "displayName": "Phase headline",
+        "purpose": "Uppercase teaching-stage names."
+      },
+      "title": {
+        "displayName": "Structure title",
+        "purpose": "Compact contextual definition heading."
+      },
+      "body": {
+        "displayName": "Stage description",
+        "purpose": "Narrow, readable scientific explanation."
+      },
+      "label": {
+        "displayName": "Exhibit annotation",
+        "purpose": "Interface controls and metadata; scene-texture typography is described separately."
+      }
+    },
+    "shadows": [
+      {
+        "name": "field-notes",
+        "value": "0 30px 110px #0008",
+        "purpose": "Separates the modal from the exhibit."
+      },
+      {
+        "name": "live-point",
+        "value": "0 0 10px #b6d3b677",
+        "purpose": "Subtle glow on specimen metadata."
+      },
+      {
+        "name": "current-stage-point",
+        "value": "0 0 12px #d2c69c66",
+        "purpose": "Current-stage navigation marker."
+      }
+    ],
+    "motion": [
+      {
+        "name": "control-transition",
+        "value": "color .2s, background .2s",
+        "purpose": "Circular icon controls."
+      },
+      {
+        "name": "view-selection",
+        "value": "background .25s, color .25s",
+        "purpose": "Visualization selector options."
+      },
+      {
+        "name": "entry-arrow",
+        "value": "background .25s, transform .25s; hover translateY(3px)",
+        "purpose": "Entry and replay circular arrow."
+      },
+      {
+        "name": "story-reveal",
+        "value": ".65s cubic-bezier(.16,1,.3,1); opacity .35 → 1; translateY(15px) → 0",
+        "purpose": "Narrative changes at chapter boundaries."
+      },
+      {
+        "name": "camera-interpolation",
+        "value": "1 - exp(-dt * 5)",
+        "purpose": "Automatic cinematic framing until a camera gesture or zoom action; Reset, visualization change or resize restores automatic fitting. Reduced motion applies the target immediately."
+      },
+      {
+        "name": "guided-playback",
+        "value": ".115 timeline units / second",
+        "purpose": "Explicitly user-started playback; wheel or touch stops it."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "ambient oscillation, particle drift, pointer parallax, CSS animations, transitions and orbit damping off; jumps immediate; camera blend 1",
+        "purpose": "Preserves scroll, range scrubbing, stage controls, orbit, pan, zoom and biological transformation."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "intermediate-width",
+        "value": "1100px"
+      },
+      {
+        "name": "mobile-width",
+        "value": "759px"
+      },
+      {
+        "name": "tall-height",
+        "value": "950px"
+      },
+      {
+        "name": "compact-height",
+        "value": "720px"
+      }
+    ],
+    "chromosomePalettePurpose": "Four matching DNA colors preserve copy identity in the cell; everyday scenes use matching sheets, bags, shirts, socks and plants to show complete corresponding sets.",
+    "sceneAnnotations": {
+      "source": "src/SceneAnnotations.tsx",
+      "rendering": "CanvasTexture on camera-facing plane meshes with shallow box backing; pointer hit testing prioritizes annotation meshes.",
+      "labelText": "24px sans-serif at texture resolution; canvas height 58px; display scale 0.48, with a 0.86 mobile multiplier.",
+      "descriptionText": "600px canvas width; 31px medium sans-serif heading; 26px sans-serif body with 35px line spacing. The header band separates body copy from the close control.",
+      "descriptionWidth": "300px desktop; 75vw below 760px.",
+      "positioning": "World anchors project into bounded model space and unproject back to world coordinates. Cell labels use measured rendered widths to preserve horizontal room.",
+      "accessibility": "Focus-revealed HTML part and close buttons provide equivalent actions; selected descriptions are announced in a live region. Escape dismisses selection.",
+      "previewNote": "The component snippets are flat visual equivalents for the design panel. The application renders the labels, descriptions and close control as actual 3D meshes."
+    }
+  },
+  "components": [
+    {
+      "name": "Icon Button",
+      "kind": "button",
+      "refersTo": "icon-button",
+      "description": "Quiet circular control; tonal fill on hover or active state.",
+      "html": "<button class=\"ds-button ds-icon\" aria-label=\"Reset view\"><svg width=\"17\" height=\"17\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\"><path d=\"M3 11a9 9 0 1 1 3 7M3 4v7h7\"/></svg></button>",
+      "css": ".ds-icon{display:inline-flex;align-items:center;justify-content:center;padding:9px;color:#acc3b6;background:none;border:0;border-radius:50%;cursor:pointer;transition:color .2s,background .2s}.ds-icon:hover,.ds-icon[aria-pressed=true]{color:#eff5e8;background:#193029}.ds-button:focus-visible,.ds-link:focus-visible,.ds-input:focus-visible{outline:2px solid var(--copper,#efb093);outline-offset:6px}"
+    },
+    {
+      "name": "Enter / Replay Action",
+      "kind": "button",
+      "refersTo": "enter-button",
+      "description": "Text action with a fine circular arrow.",
+      "html": "<button class=\"ds-button ds-enter\">Enter the cell <span><svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\"><path d=\"M12 4v16m-6-6 6 6 6-6\"/></svg></span></button>",
+      "css": ".ds-enter{display:inline-flex;align-items:center;gap:28px;font:400 12px 'DM Sans',sans-serif;letter-spacing:.01em;color:var(--ink,#e9eee6);padding:0;background:none;border:0;cursor:pointer}.ds-enter span{display:grid;place-items:center;width:38px;height:38px;border:1px solid #557261;border-radius:50%;transition:background .25s,transform .25s}.ds-enter:hover span{background:#304c3d;transform:translateY(3px)}.ds-button:focus-visible,.ds-link:focus-visible,.ds-input:focus-visible{outline:2px solid var(--copper,#efb093);outline-offset:6px}@media(prefers-reduced-motion:reduce){.ds-enter span{transition:none}}"
+    },
+    {
+      "name": "Visualization Switch",
+      "kind": "custom",
+      "refersTo": "view-switch",
+      "description": "Two compact views share the same biological progress.",
+      "html": "<div class=\"ds-switch\" aria-label=\"Visualization mode\"><button class=\"ds-button\" aria-pressed=\"true\"><span></span>Cell view</button><button class=\"ds-button\" aria-pressed=\"false\">Real-world analogy</button></div>",
+      "css": ".ds-switch{display:inline-flex;gap:3px;border:1px solid #3c594a99;border-radius:30px;padding:4px;background:#0b1c18aa;backdrop-filter:blur(16px)}.ds-switch button{display:flex;align-items:center;gap:8px;white-space:nowrap;padding:10px 15px;font:400 10px 'DM Sans',sans-serif;color:#9cb3a4;border:0;background:none;border-radius:30px;cursor:pointer;transition:background .25s,color .25s}.ds-switch button[aria-pressed=true]{color:#e6ecdf;background:#30493c}.ds-switch button span{width:4px;height:4px;border-radius:50%;background:#b6d0ac}.ds-button:focus-visible,.ds-link:focus-visible,.ds-input:focus-visible{outline:2px solid var(--copper,#efb093);outline-offset:6px}"
+    },
+    {
+      "name": "Stage Navigation",
+      "kind": "nav",
+      "refersTo": "stage-navigation",
+      "description": "Fine progress line and a warm marker distinguish the current stage.",
+      "html": "<nav class=\"ds-nav\" aria-label=\"Cell cycle stages\"><button class=\"ds-button\" aria-current=\"step\"><span class=\"ds-nav-top\"><span>03</span><span class=\"ds-line\"><i></i></span><span class=\"ds-point\"></span></span><span class=\"ds-name\">Metaphase</span></button></nav>",
+      "css": ".ds-nav{width:220px}.ds-nav button{width:100%;padding:0;text-align:left;border:0;background:none;cursor:pointer;font-family:'DM Sans',sans-serif}.ds-nav-top{display:flex;align-items:center;gap:10px;color:#e2c0a1;font-size:9px;font-variant-numeric:tabular-nums}.ds-line{height:1px;flex:1;background:#385242}.ds-line i{height:1px;display:block;background:#b5c7a4;width:60%}.ds-point{width:5px;height:5px;border:1px solid #e5c7a0;border-radius:50%;background:#e5c7a0;box-shadow:0 0 12px #d2c69c66}.ds-name{display:inline-block;margin-top:14px;font-size:12px;color:#9ab19e;transition:color .2s}.ds-nav button:hover .ds-name,.ds-nav button[aria-current=step] .ds-name{color:#edf0dd}.ds-button:focus-visible,.ds-link:focus-visible,.ds-input:focus-visible{outline:2px solid var(--copper,#efb093);outline-offset:6px}"
+    },
+    {
+      "name": "Timeline Scrubber",
+      "kind": "input",
+      "refersTo": "timeline-scrubber",
+      "description": "Directly draggable fine track; native range keyboard input remains available.",
+      "html": "<input class=\"ds-input ds-scrub\" type=\"range\" min=\"0\" max=\"7.3\" step=\"0.005\" value=\"3.3\" aria-label=\"Scrub through the complete cell cycle\"/>",
+      "css": ".ds-scrub{appearance:none;width:100%;height:3px;margin:16px 0;background:transparent;cursor:ew-resize;accent-color:var(--copper,#efb093)}.ds-scrub::-webkit-slider-runnable-track{height:1px;background:#466147}.ds-scrub::-webkit-slider-thumb{appearance:none;width:7px;height:7px;margin-top:-3px;background:#d8c5a7;border-radius:50%;cursor:ew-resize}.ds-scrub::-moz-range-track{height:1px;background:#466147}.ds-scrub::-moz-range-thumb{width:7px;height:7px;border:0;background:#d8c5a7;border-radius:50%}.ds-button:focus-visible,.ds-link:focus-visible,.ds-input:focus-visible{outline:2px solid var(--copper,#efb093);outline-offset:6px}"
+    },
+    {
+      "name": "Spatial Structure Label",
+      "kind": "custom",
+      "refersTo": "spatial-label",
+      "description": "Flat visual equivalent of the camera-facing 3D label; application uses mesh picking and separate keyboard equivalents.",
+      "html": "<button class=\"ds-button ds-label\"><span></span>Spindle fibres</button>",
+      "css": ".ds-label{display:flex;align-items:center;gap:4px;white-space:nowrap;font:400 11.52px sans-serif;height:28px;padding:0 8px;color:#edf3e6;background:#10291f;border:1px solid #557564;border-radius:0;cursor:pointer}.ds-label>span{width:3px;height:3px;background:var(--copper,#efb093);border-radius:50%}.ds-label:hover{cursor:pointer}.ds-label:focus-visible{outline:2px solid var(--copper,#efb093);outline-offset:6px}"
+    },
+    {
+      "name": "Structure Detail",
+      "kind": "custom",
+      "refersTo": "structure-detail",
+      "description": "Flat visual equivalent of the 3D description plaque; header, body and mesh close control occupy separate reading areas.",
+      "html": "<aside class=\"ds-detail\"><div class=\"ds-detail-header\"><span class=\"ds-detail-dot\"></span><h2>Spindle fibres</h2></div><button class=\"ds-close\" aria-label=\"Close structure detail\"><svg width=\"12\" height=\"12\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\"><path d=\"m6 6 12 12M18 6 6 18\"/></svg></button><p>Structures that guide chromosome movement during mitosis.</p></aside>",
+      "css": ".ds-detail{position:relative;width:300px;max-width:75vw;padding:15px 13px 14px;background:#10291f;color:#edf3e6;border:1px solid #557564;border-radius:0;font-family:sans-serif}.ds-detail-header{display:flex;align-items:center;gap:6px;padding-right:36px;min-height:20px}.ds-detail-dot{display:block;flex:none;width:4px;height:4px;background:var(--copper,#efb093);border-radius:50%}.ds-detail h2{margin:0;font:500 15.5px/19px sans-serif}.ds-detail p{font:400 13px/17.5px sans-serif;color:#d8e4d1;margin:20px 0 0}.ds-close{position:absolute;right:6px;top:6px;display:grid;place-items:center;width:42px;height:42px;padding:0;color:#e3e9d8;background:#294936;border:0;border-radius:0;cursor:pointer}.ds-close:hover{cursor:pointer}.ds-close:focus-visible{outline:2px solid var(--copper,#efb093);outline-offset:6px}"
+    },
+    {
+      "name": "Field Notes Surface",
+      "kind": "custom",
+      "refersTo": "field-notes",
+      "description": "Modal reading surface; preview shows its body without opening a modal.",
+      "html": "<section class=\"ds-notes\"><h2>A little context.<br/>A lot of life.</h2><p>Six chapters follow an illustrative animal cell from preparation to division.</p><a class=\"ds-link\" href=\"#notes\">Biology reference · OpenStax Biology 2e ↗</a></section>",
+      "css": ".ds-notes{background:#10241c;color:var(--ink,#e9eee6);border:1px solid #526a54;border-radius:14px;padding:40px;max-width:600px;box-shadow:0 30px 110px #0008}.ds-notes h2{font:500 38px/1.2 Manrope,sans-serif;letter-spacing:-.04em;margin:0}.ds-notes p{font:400 14px/1.65 'DM Sans',sans-serif;color:#b2c2af;margin:20px 0}.ds-notes a{font:400 12px 'DM Sans',sans-serif;color:inherit;text-underline-offset:4px}.ds-button:focus-visible,.ds-link:focus-visible,.ds-input:focus-visible{outline:2px solid var(--copper,#efb093);outline-offset:6px}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Nocturnal Science Museum",
+    "overview": "A living specimen occupies a dark, continuous exhibition space. Translucent sea-glass membranes, warm glowing chromosomes and pale typography give the experience a calm cinematic character. Controls stay small and precise; large, tightly tracked headings carry the narrative.\n\nThe user chose an elegant scientific museum atmosphere with minimal interface chrome and smooth, scroll-controlled 3D. Preserve the organic procedural model and restrained exhibit language. Childish clipart, card grids and slide-like stage replacements do not belong to this experience.",
+    "keyCharacteristics": [
+      "One continuous specimen with reversible biological transformation.",
+      "Sea-glass translucency and copper light against near-black green.",
+      "Large Manrope headings paired with quiet DM Sans annotations.",
+      "Fine rules, small circular controls and spatial structure labels."
+    ],
+    "rules": [
+      {
+        "name": "The Specimen Light Rule",
+        "body": "Use luminous color to distinguish biological structures and small interaction states. Preserve the dark exhibition field around them.",
+        "section": "colors"
+      },
+      {
+        "name": "The Quiet Annotation Rule",
+        "body": "Keep interface labels subordinate to the stage title and specimen; do not promote every control into a heading.",
+        "section": "typography"
+      }
+    ],
+    "dos": [
+      "Do preserve the dark cinematic science museum atmosphere and organic translucent specimen.",
+      "Do keep large, elegant headings and small, restrained scientific annotations.",
+      "Do keep biological progression reversible and retain user camera framing until reset or automatic refit.",
+      "Do preserve keyboard focus, direct scrubbing, mobile camera fit and reduced-motion behavior.",
+      "Do keep orbit, pan and zoom available alongside readable lesson text and 3D annotations."
+    ],
+    "donts": [
+      "Don't introduce childish clipart, card grids or slide-like stage replacements.",
+      "Don't replace continuous biological transformations with static illustrations.",
+      "Don't add bloom, heavy panel shadows or saturated fills to routine interface controls.",
+      "Don't claim the illustrative colors, chromosome count, spacing or timing are literal biological scale."
+    ]
+  }
+}

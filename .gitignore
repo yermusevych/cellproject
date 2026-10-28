@@ -1,0 +1,17 @@
+node_modules/
+dist/
+.sites-local/
+*.tsbuildinfo
+
+.impeccable/review/
+
+.impeccable/review-v2/
+
+.impeccable/review-classroom/
+
+.impeccable/review-analogies/
+
+.impeccable/review-always-3d/
+
+dist-pages/
+.impeccable/review-anchors/
